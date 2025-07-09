@@ -6,47 +6,47 @@
         </a>
     </div>
     <input type="checkbox" id="menu-toggle" hidden />
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <ul class="ttfc-menu">
-        <li>
+    <label for="menu-toggle" aria-controls="ttfc-menu" class="menu-icon">&#9776;</label>
+    <ul class="ttfc-menu" role="menu" aria-labelledby="menu-toggle">
+        <li role="presentation">
             <a href=" /">Home</a>
         </li>
-        <li>
+        <li role="presentation">
             <a href="#">Blog</a>
             <ul>
-                <li>
-                    <a href="/blog/category/updates">Updates</a>
+                <li role="presentation">
+                    <a role="menuitem" href="/blog/category/updates">Updates</a>
                 </li>
-                <li>
-                    <a href="#">Tutorials</a>
+                <li role="presentation">
+                    <a role="menuitem" href="#">Tutorials</a>
                     <ul>
                         <li>
-                            <a href="/blog/category/tutorials/typescript">Typescript</a>
+                            <a role="menuitem" href="/blog/category/tutorials/typescript">Typescript</a>
                         </li>
                         <li>
-                            <a href="/blog/category/tutorials/golang">Golang</a>
+                            <a role="menuitem" href="/blog/category/tutorials/golang">Golang</a>
                         </li>
                         <li>
-                            <a href="/blog/category/tutorials/python">Python</a>
+                            <a role="menuitem" href="/blog/category/tutorials/python">Python</a>
                         </li>
                         <li>
-                            <a href="/blog/category/tutorials/javascript">Javascript</a>
+                            <a role="menuitem" href="/blog/category/tutorials/javascript">Javascript</a>
                         </li>
                         <li>
-                            <a href="/blog/category/tutorials/wordpress">WordPress</a>
+                            <a role="menuitem" href="/blog/category/tutorials/wordpress">WordPress</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="/blog/category/news">News</a>
+                <li role="presentation">
+                    <a role="menuitem" href="/blog/category/news">News</a>
                 </li>
             </ul>
         </li>
-        <li>
-            <a href="/about">About</a>
+        <li role="presentation">
+            <a role="menuitem" href="/about">About</a>
         </li>
-        <li>
-            <a href="/contact">Contact</a>
+        <li role="presentation">
+            <a role="menuitem" href="/contact">Contact</a>
         </li>
     </ul>
 </div>

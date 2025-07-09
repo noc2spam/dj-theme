@@ -136,6 +136,10 @@ footer {
     display: none;
 }
 
+.ttfc-menu li:focus-within>ul {
+    display: block;
+}
+
 @media (max-width: 600px) {
 
     .menu-icon {
@@ -198,9 +202,6 @@ footer {
         display: none;
     }
 
-    .ttfc-menu li:focus-within>ul {
-        display: block;
-    }
 
     .ttfc-menu li:focus+ul {
         display: block;
