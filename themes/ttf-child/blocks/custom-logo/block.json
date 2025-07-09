@@ -1,6 +1,6 @@
 {
     "apiVersion": 2,
-    "name": "mytheme/custom-logo",
+    "name": "ttfc/custom-logo",
     "title": "Custom Logo",
     "category": "widgets",
     "render": "render.php",
