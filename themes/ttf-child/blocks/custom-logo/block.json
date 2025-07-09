@@ -1,0 +1,10 @@
+{
+    "apiVersion": 2,
+    "name": "mytheme/custom-logo",
+    "title": "Custom Logo",
+    "category": "widgets",
+    "render": "render.php",
+    "supports": {
+        "html": false
+    }
+}

@@ -1,0 +1,1 @@
+<img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/images/logo.png' ); ?>" alt="Site Logo" width="150">

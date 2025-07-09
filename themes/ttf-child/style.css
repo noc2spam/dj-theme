@@ -2,3 +2,54 @@
  * Theme Name: Twenty Twenty-Four Child
  * Template:   twentytwentyfour
  */
+
+/** 
+  * Start header customisation 
+  */
+
+.ttfc-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+.ttfc-container>div {
+    width: 100%;
+}
+
+.ttfc-container>div,
+.ttfc-container>ul {
+    margin: auto 5px !important;
+}
+
+.ttfc-container>ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    align-self: self-end;
+}
+
+@media (max-width: 600px) {
+    .ttfc-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 20;
+    }
+
+    .ttfc-container>div {
+        width: 100%;
+        text-align: center;
+        height: auto;
+    }
+
+}
+
+/** 
+  * End header customisation 
+  */
