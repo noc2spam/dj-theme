@@ -53,3 +53,35 @@
 /** 
   * End header customisation 
   */
+
+
+/** 
+  *  Start: Add custom CSS:
+            Adjust font sizes for mobile devices.
+            Set a different background color for the footer.
+    *
+  */
+@media (max-width: 600px) {
+    body {
+        font-size: 2.1rem !important;
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 300px) {
+    body {
+        font-size: 0.9rem !important;
+    }
+}
+
+footer {
+    background-color: rgb(245, 202, 202);
+    /* Light gray background */
+    padding: 20px;
+    text-align: center;
+}
