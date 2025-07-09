@@ -1,0 +1,1 @@
+console.log('Enqueued custom JS for logging a message in the console.');
