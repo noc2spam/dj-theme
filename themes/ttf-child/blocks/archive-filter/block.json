@@ -1,0 +1,10 @@
+{
+    "apiVersion": 2,
+    "name": "ttfc/archive-filter",
+    "title": "Archive Filter",
+    "category": "widgets",
+    "render": "render.php",
+    "supports": {
+        "html": false
+    }
+}

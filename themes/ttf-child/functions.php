@@ -2,6 +2,7 @@
 
 function ttfc_register_blocks() {
     register_block_type( __DIR__ . '/blocks/custom-logo' );
+    register_block_type( __DIR__ . '/blocks/archive-filter' );
 }
 add_action( 'init', 'ttfc_register_blocks' );
 
@@ -55,3 +56,24 @@ function project_types_taxonomy() {
 }
 add_action( 'init', 'project_types_taxonomy' );
 
+/**
+ * End registering custom post type and taxonomy.
+ */
+
+ /**
+  * Start filter project archives by project type.
+  */
+function ttfc_filter_projects_by_type( $query ) {
+    if ( ! is_admin() && $query->is_post_type_archive( 'projects' ) && $query->is_main_query() ) {
+        if ( ! empty( $_GET['project_type'] ) ) {
+            $query->set( 'tax_query', array(
+                array(
+                    'taxonomy' => 'projects',
+                    'field'    => 'slug',
+                    'terms'    => sanitize_text_field( $_GET['project_type'] ),
+                ),
+            ) );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'ttfc_filter_projects_by_type' );
