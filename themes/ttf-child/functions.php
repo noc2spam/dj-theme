@@ -15,3 +15,22 @@ function ttfc_enqueue_console_log_js() {
     wp_enqueue_script( 'ttfc-console_log-js', get_stylesheet_directory_uri() . '/js/console-log.js', array(), wp_get_theme()->get('Version'), true );
 }
 add_action( 'wp_enqueue_scripts', 'ttfc_enqueue_console_log_js' );
+
+/**
+ * Register a custom taxonomy for existing CPT named projects.
+ */
+
+
+function project_types_taxonomy() {
+    register_taxonomy(
+        'projects',
+        'Projects',
+        array(
+            'hierarchical' => true,
+            'label' => 'Project types',
+            'query_var' => true
+        )
+    );
+}
+add_action( 'init', 'project_types_taxonomy' );
+
