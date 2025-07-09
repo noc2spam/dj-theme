@@ -26,30 +26,6 @@
     margin: auto 5px !important;
 }
 
-.ttfc-container>ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-    align-self: self-end;
-}
-
-@media (max-width: 600px) {
-    .ttfc-container {
-        flex-direction: column;
-        align-items: center;
-        margin: 20;
-    }
-
-    .ttfc-container>div {
-        width: 100%;
-        text-align: center;
-        height: auto;
-    }
-
-}
-
 /** 
   * End header customisation 
   */
@@ -81,9 +57,164 @@
 
 footer {
     background-color: rgb(245, 202, 202);
-    /* Light gray background */
     padding: 20px;
     text-align: center;
 }
 
 /* End: Add custom footer CSS */
+
+/** 
+    *  Start: multi level menu
+*/
+
+.ttfc-menu {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    gap: 1em;
+}
+
+.ttfc-menu,
+.ttfc-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.ttfc-menu li {
+    cursor: pointer;
+    padding: 10px !important;
+}
+
+.ttfc-menu>li {
+    position: relative;
+}
+
+.ttfc-menu>li>a {
+    display: block;
+    text-decoration: none;
+}
+
+.ttfc-menu li>ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #444;
+    display: none;
+    min-width: 200px;
+    z-index: 1001;
+}
+
+.ttfc-menu li ul li ul {
+    z-index: 1002;
+}
+
+.ttfc-menu li:hover>ul {
+    display: block;
+}
+
+.ttfc-menu li ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.ttfc-menu li ul li:hover {
+    background: #e32929;
+}
+
+
+
+.ttfc-menu li ul li ul {
+    left: -101%;
+    top: 0;
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media (max-width: 600px) {
+
+    .menu-icon {
+        margin-top: -10px;
+        display: none;
+        padding: 0.2em;
+        color: #333;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1005;
+    }
+
+    .ttfc-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #fff;
+        width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em;
+        z-index: 1004;
+
+    }
+
+    .ttfc-menu li {
+        padding: 0 10px;
+    }
+
+    .ttfc-menu li ul li ul {
+        display: none;
+        position: relative;
+        z-index: 1002;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .ttfc-menu {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    #menu-toggle:checked+.menu-icon+.ttfc-menu {
+        display: flex;
+    }
+
+    .ttfc-menu li ul {
+        position: absolute;
+        width: 100%;
+    }
+
+    .ttfc-menu li {
+        position: relative;
+    }
+
+    .ttfc-menu li>a+ul {
+        display: none;
+    }
+
+    .ttfc-menu li:focus-within>ul {
+        display: block;
+    }
+
+    .ttfc-menu li:focus+ul {
+        display: block;
+    }
+
+    .ttfc-menu li ul li ul {
+        left: 101% !important;
+        top: -50%;
+        display: none;
+        position: absolute;
+    }
+
+}
+
+/** 
+End: multi level menu 
+*/

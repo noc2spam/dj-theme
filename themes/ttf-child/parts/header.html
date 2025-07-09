@@ -5,12 +5,42 @@
             <!-- wp:mytheme/custom-logo /-->
         </a>
     </div>
-    <ul>
+    <input type="checkbox" id="menu-toggle" hidden />
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="ttfc-menu">
         <li>
             <a href=" /">Home</a>
         </li>
         <li>
-            <a href="/blog">Blog</a>
+            <a href="#">Blog</a>
+            <ul>
+                <li>
+                    <a href="/blog/category/updates">Updates</a>
+                </li>
+                <li>
+                    <a href="#">Tutorials</a>
+                    <ul>
+                        <li>
+                            <a href="/blog/category/tutorials/typescript">Typescript</a>
+                        </li>
+                        <li>
+                            <a href="/blog/category/tutorials/golang">Golang</a>
+                        </li>
+                        <li>
+                            <a href="/blog/category/tutorials/python">Python</a>
+                        </li>
+                        <li>
+                            <a href="/blog/category/tutorials/javascript">Javascript</a>
+                        </li>
+                        <li>
+                            <a href="/blog/category/tutorials/wordpress">WordPress</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/blog/category/news">News</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="/about">About</a>
