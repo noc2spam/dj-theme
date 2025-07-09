@@ -16,6 +16,27 @@ function ttfc_enqueue_console_log_js() {
 }
 add_action( 'wp_enqueue_scripts', 'ttfc_enqueue_console_log_js' );
 
+
+/**
+ * Register a custom post type named Projects.
+ */
+
+function projects_post_type() {
+    register_post_type( 'projects',
+        array(
+            'labels' => array(
+                'name' => __( 'Projects' ),
+                'singular_name' => __( 'Project' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'supports' => array( 'title', 'editor', 'thumbnail'),
+            'rewrite' => array( 'slug' => 'projects' ),
+        )
+    );
+}
+add_action( 'init', 'projects_post_type' );
+
 /**
  * Register a custom taxonomy for existing CPT named projects.
  */
@@ -24,7 +45,7 @@ add_action( 'wp_enqueue_scripts', 'ttfc_enqueue_console_log_js' );
 function project_types_taxonomy() {
     register_taxonomy(
         'projects',
-        'Projects',
+        'projects',
         array(
             'hierarchical' => true,
             'label' => 'Project types',
